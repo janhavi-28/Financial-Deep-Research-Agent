@@ -33,7 +33,7 @@ Keep each section to 3-5 bullet points. Be concise and use real numbers.
 ## 4. Key Risks
 ## 5. Opportunities & Outlook
 ## 6. Sources
-(List all URLs from the research data)
+(List all Sources/URLs from the research data)
 
 Total report must be under 800 words.
 Do not add any sections beyond these 6.

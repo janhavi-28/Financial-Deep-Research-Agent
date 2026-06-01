@@ -21,9 +21,12 @@ async def researcher_analyst_node(state: ResearchState) -> Dict[str, Any]:
     logger.info("--- RESEARCHER + ANALYST NODE ---")
     
     # 1. RAG Retrieval
-    rag_context = retrieve_financial_context(query=query, ticker=ticker)
+    rag_context, rag_sources = retrieve_financial_context(query=query, ticker=ticker)
     if not rag_context or "No local" in rag_context or "No relevant" in rag_context:
         rag_context = "None uploaded"
+    else:
+        for src in rag_sources:
+            search_history.append({"query": "Internal PDF", "url": src})
         
     # 2. Web Search Execution
     raw_search_data = ""
